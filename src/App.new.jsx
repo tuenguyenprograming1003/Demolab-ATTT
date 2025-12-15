@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import TheoryTab from './tabs/TheoryTab';
 import ExerciseTab from './tabs/ExerciseTab';
 import ToolTab from './tabs/ToolTab';
@@ -9,27 +10,31 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-6">
-      <div className="max-w-6xl mx-auto card-clean overflow-hidden">
-        <header className="app-header border-b px-6 py-6">
+      <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-2xl overflow-hidden">
+        <header className="border-b px-6 py-4">
           <h1 className="text-2xl font-bold">Discrete Log & Diffie–Hellman Demo</h1>
           <p className="text-slate-600 text-sm mt-1">
             Interactive learning tool for modern cryptography
           </p>
         </header>
 
-        <nav className="tabs-bar flex gap-3 px-6 py-4 border-b">
+        <nav className="flex gap-2 px-6 py-3 bg-slate-50 border-b">
           <Tab label="Lý thuyết" active={tab==='theory'} onClick={()=>setTab('theory')} />
           <Tab label="Bài tập học thuật" active={tab==='exercises'} onClick={()=>setTab('exercises')} />
           <Tab label="Công cụ mã hóa" active={tab==='tools'} onClick={()=>setTab('tools')} />
         </nav>
 
         <main className="p-6">
-          {/* simple CSS transition fallback */}
-          <div className="transition-panel">
+          <motion.div
+            key={tab}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
             {tab === 'theory' && <TheoryTab />}
             {tab === 'exercises' && <ExerciseTab />}
             {tab === 'tools' && <ToolTab />}
-          </div>
+          </motion.div>
         </main>
       </div>
     </div>
