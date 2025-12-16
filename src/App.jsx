@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import TheoryTab from './tabs/TheoryTab';
+import TheoryPage from './pages/Theory/TheoryPage';
+import { PageLayout } from './components/layout/PageLayout';
+import { Card } from './components/ui/Card';
 import ExerciseTab from './tabs/ExerciseTab';
 import ToolTab from './tabs/ToolTab';
 import Tab from './components/Tab';
@@ -26,7 +29,13 @@ export default function App() {
         <main className="p-6">
           {/* simple CSS transition fallback */}
           <div className="transition-panel">
-            {tab === 'theory' && <TheoryTab />}
+            {tab === 'theory' && (
+              <PageLayout title="📘 Diffie–Hellman Theory">
+                <Card>
+                  <TheoryPage />
+                </Card>
+              </PageLayout>
+            )}
             {tab === 'exercises' && <ExerciseTab />}
             {tab === 'tools' && <ToolTab />}
           </div>

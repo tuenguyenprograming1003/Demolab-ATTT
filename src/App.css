@@ -85,7 +85,12 @@ input:focus {
 .btn-ghost { background: #f8fafc; color: var(--muted); border: 1px solid rgba(15,23,42,0.04); }
 .btn-accent { background: linear-gradient(90deg,var(--accent),var(--accent-2)); color: white; box-shadow: 0 6px 18px rgba(124,58,237,0.12); }
 
-.card-white { background: white; border-radius: 10px; padding: 12px; border: 1px solid rgba(15,23,42,0.04); }
+.card-white {
+  background: white;
+  border-radius: 1rem;
+  border: 1px solid #e5e7eb; /* neutral */
+  padding: 1rem;
+}
 
 .result-compact { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 8px; }
 .result-compact .font-mono { font-weight: 600; }
@@ -101,6 +106,15 @@ input:focus {
 /* Form layout helpers */
 .form-row { display:flex; gap:10px; align-items:center; }
 .form-col { display:flex; flex-direction:column; gap:8px; }
+
+/* Result helpers */
+.result-list { display:flex; flex-direction:column; gap:12px; }
+.result-action { display:flex; gap:8px; align-items:center; }
+
+/* remove specialized tools-wrapper/panel to avoid layout conflicts with prose/grid */
+.tools-wrapper { display:block; }
+.panel { display:block; }
+.form-row-compact { display:flex; gap:8px; align-items:center; }
 
 .app-header {
   background: linear-gradient(90deg, rgba(79,70,229,0.04), rgba(124,58,237,0.04));

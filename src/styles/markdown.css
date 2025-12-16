@@ -1,0 +1,6 @@
+.prose { color: #0f172a; }
+.prose h1 { color: #1d4ed8; font-weight: 700; }
+.prose h2 { margin-top: 2rem; color: #2563eb; }
+.prose blockquote { border-left: 4px solid #3b82f6; background: #eff6ff; padding: 1rem; border-radius: 0.75rem; }
+.prose code { background: #f1f5f9; padding: 0.2rem 0.4rem; border-radius: 0.3rem; }
+.prose ul { list-style: disc; margin-left: 1.25rem; }

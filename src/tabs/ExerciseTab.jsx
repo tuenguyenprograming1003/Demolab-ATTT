@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Section, Exercise, Formula, Result } from '../components/UI';
+import { PageLayout } from '../components/layout/PageLayout';
+import { Card } from '../components/ui/Card';
 import { modPow } from '../crypto/diffieHellman';
 
 // brute-force discrete log (small p only)
@@ -73,7 +75,9 @@ export default function ExerciseTab() {
     setResults(r => ({...r, [id]: { ok, expected }}));
   }
   return (
-    <div className="space-y-8 max-w-5xl">
+    <PageLayout title="🏷️ Bài tập học thuật">
+      <Card>
+        <div className="prose max-w-none">
 
       <Section title="A. Discrete Logarithm – Bài tập học thuật">
 
@@ -174,6 +178,8 @@ export default function ExerciseTab() {
         </p>
       </Section>
 
-    </div>
+        </div>
+      </Card>
+    </PageLayout>
   );
 }
